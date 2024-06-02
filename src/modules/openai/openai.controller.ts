@@ -22,6 +22,7 @@ export class OpenaiController {
     @Body(new ValidationPipe({ transform: true }))
     data: ChatCompletionAnswerInputDto,
   ): Promise<OpenAiResponse> {
+    console.log(data);
     return this._service.getAiModelAnswer(data);
   }
 

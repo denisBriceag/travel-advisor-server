@@ -46,7 +46,7 @@ export function requestConstructor(
   const travelExp: string = `I am ${travelExperience}.\n`;
   const note: string = `Some additional notes are: ${notes}.\n`;
   const additional: string =
-    'I want you to give me the response in the following model: Make an array of objects. Each object will be a country. Each object should have the following keys: countryName, description where you describe why namely this country suites the user. requireVisa flag, imageSrc with the link to a beautiful image. Return the answer as a JSON object.';
+    'I want you to give me the response in the following model: Make an array of objects. Each object will be a country. Each object should have the following keys: countryName, description where you describe why namely this country suites the user. requireVisa flag, imageSrc with the link to a beautiful image. Return the answer as a JSON object. The minimum amount of countrie should be 10';
 
   return (
     introMessage +

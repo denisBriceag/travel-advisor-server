@@ -71,3 +71,21 @@ export class DalleImageInput {
   @IsString()
   countryName: string;
 }
+
+export class DetailsInput {
+  @ApiProperty()
+  @IsString()
+  countryName: string;
+
+  @ApiProperty()
+  @IsEnum(Interests)
+  interests: Interests;
+
+  @ApiProperty()
+  @IsEnum(TravelCompanions)
+  travelCompanions: TravelCompanions;
+
+  @ApiProperty()
+  @IsEnum(Accommodation)
+  accommodation: Accommodation;
+}

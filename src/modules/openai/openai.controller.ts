@@ -8,6 +8,7 @@ import {
 import {
   ChatCompletionAnswerInputDto,
   DalleImageInput,
+  DetailsInput,
 } from './dtos/chat-completion-answer.dto';
 import { OpenaiService } from './openai.service';
 import { OpenAiResponse } from './models/response.model';
@@ -23,6 +24,15 @@ export class OpenaiController {
     data: ChatCompletionAnswerInputDto,
   ): Promise<OpenAiResponse> {
     return this._service.getAiModelAnswer(data);
+  }
+
+  @Post('/details')
+  @UsePipes(ValidationPipe)
+  getDetails(
+    @Body(new ValidationPipe({ transform: true }))
+    data: DetailsInput,
+  ): Promise<OpenAiResponse> {
+    return this._service.getDetails(data);
   }
 
   @Post('/image')

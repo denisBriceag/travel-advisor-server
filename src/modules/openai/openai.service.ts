@@ -21,9 +21,9 @@ const SCHEMA_COUNTRUES = {
 
 const SCHEMA_DETAILS = {
   places: {
-    name: 'Italy',
-    description: 'Description',
-    ticketsRequired: true,
+    name: 'Resort name...',
+    location: 'Resort Location',
+    description: 'description',
   },
 };
 
@@ -99,7 +99,7 @@ export class OpenaiService {
         model: 'dall-e-3',
         prompt: input.countryName,
         n: 1,
-        size: '1792x1024',
+        size: '1024x1024',
         response_format: 'url',
       });
     } catch (err: unknown) {

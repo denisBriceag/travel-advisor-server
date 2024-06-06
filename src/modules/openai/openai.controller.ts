@@ -26,6 +26,15 @@ export class OpenaiController {
     return this._service.getAiModelAnswer(data);
   }
 
+  @Post('/details')
+  @UsePipes(ValidationPipe)
+  getDetails(
+    @Body(new ValidationPipe({ transform: true }))
+    data: DetailsInput,
+  ): Promise<OpenAiResponse> {
+    return this._service.getDetails(data);
+  }
+
   @Post('/image')
   @UsePipes(ValidationPipe)
   getModelImage(

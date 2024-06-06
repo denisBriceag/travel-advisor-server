@@ -80,4 +80,12 @@ export class DetailsInput {
   @ApiProperty()
   @IsEnum(Interests)
   interests: Interests;
+
+  @ApiProperty()
+  @IsEnum(TravelCompanions)
+  travelCompanions: TravelCompanions;
+
+  @ApiProperty()
+  @IsEnum(Accommodation)
+  accommodation: Accommodation;
 }

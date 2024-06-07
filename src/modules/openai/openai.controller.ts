@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Get,
   Post,
   UsePipes,
   ValidationPipe,
@@ -43,5 +44,10 @@ export class OpenaiController {
     data: DetailsInput,
   ): Promise<OpenAiResponse> {
     return this._service.getDetails(data);
+  }
+
+  @Get('/countries')
+  getCountries(): { countries: string[] } {
+    return this._service.getCountries();
   }
 }
